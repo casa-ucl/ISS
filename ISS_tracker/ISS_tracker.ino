@@ -11,10 +11,11 @@
 #include <WiFiClientSecure.h> 
 #include <ESP8266WebServer.h>
 #include <ESP8266HTTPClient.h>
+#include <ArduinoJson.h>
 
 /* Set these to your desired credentials. */
-const char *ssid = "WIFI_NAME";  //ENTER YOUR WIFI SETTINGS
-const char *password = "WIFI_PASSWORD";
+const char *ssid = "VM1227143";  //ENTER YOUR WIFI SETTINGS
+const char *password = "fsk2htkpBbWp";
 
 //Web/Server address to read/write from 
 const char *host = "api.wheretheiss.at";
@@ -27,6 +28,9 @@ const char fingerprint[] PROGMEM = "D5 28 75 E9 DB C8 8C 13 7A 9E 2B 04 B0 09 C3
 int latitude;
 int longitude;
 String visibility;
+
+//JSON document
+DynamicJsonDocument doc(2048);
 
 void setup() {
   delay(1000);
@@ -102,13 +106,34 @@ void loop() {
 
   Serial.println("reply was:");
   Serial.println("==========");
-  String line;
+  String response;
   while(httpsClient.available()){        
-    line = httpsClient.readStringUntil('\n');  //Read Line by Line
-    Serial.println(line); //Print response
+    response = httpsClient.readStringUntil('\n');  //Read response
+    Serial.println(response); //Print response
   }
   Serial.println("==========");
   Serial.println("closing connection");
+
+  //Parse JSON, read error if any
+  DeserializationError error = deserializeJson(doc, response);
+  if(error) {
+     Serial.print(F("deserializeJson() failed: "));
+     Serial.println(error.f_str());
+     delay(5000);
+     return;
+  }
+
+  latitude = doc["latitude"].as<int>();
+  Serial.print("Latitude: ");
+  Serial.println(latitude);
+
+  longitude = doc["longitude"].as<int>();
+  Serial.print("Longitude: ");
+  Serial.println(longitude);
+
+  visibility = doc["visibility"].as<String>();
+  Serial.print("Visibility: ");
+  Serial.println(visibility);
     
   delay(2000);  //GET Data at every 2 seconds
 }
