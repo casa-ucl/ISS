@@ -212,7 +212,9 @@ void updateLatitude() {
   }
   //use the map function to remap the latitude to a number between 0-7 
   //then light up that LED
-  int ledToLight = map(latitude, -90, 90, 0, 7);
+  //update: since I resoldered the Neopixel LED the opposite way, remap to 7-0 instead
+  //int ledToLight = map(latitude, -90, 90, 0, 7);
+  int ledToLight = map(latitude, -90, 90, 7, 0);
   pixels.setPixelColor(ledToLight, 100, 0, 0);
   pixels.show();
 }
