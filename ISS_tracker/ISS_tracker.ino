@@ -16,8 +16,8 @@
 #include <ArduinoJson.h>
 
 #include <Servo.h>
-
 #include <Adafruit_NeoPixel.h>
+
 #define LAT_LED_PIN 12 // PIN D6 on NodeMCU
 #define LAT_NUM_PIXELS 8
 
@@ -49,7 +49,7 @@ DynamicJsonDocument doc(2048);
 Servo servo;
 
 // Initialize NeoPixel 8 Board (latitude)
-Adafruit_NeoPixel pixels(VIS_NUM_PIXELS, LAT_LED_PIN);
+Adafruit_NeoPixel pixels(LAT_NUM_PIXELS, LAT_LED_PIN);
 // Initialize NeoPixel Strip (visibility)
 Adafruit_NeoPixel strip(VIS_NUM_PIXELS, VIS_LED_PIN,  NEO_RGB + NEO_KHZ800);
 
