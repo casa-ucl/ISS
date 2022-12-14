@@ -187,7 +187,12 @@ void loop() {
 
 // Helper Methods
 void updateLongitude() {
-  servo.write(longitude);
+  if (longitude < 0) {
+    int mappedLongitude = map(longitude, -180, 0, 180, 360);
+    servo.write(mappedLongitude);
+  } else {
+    servo.write(longitude);
+  }
 }
 
 void updateVisibility() {
