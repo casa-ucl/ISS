@@ -64,8 +64,8 @@ void setup() {
   // start NeoPixel board LEDs and set them all to be red to initalize
   pixels.begin();
   for (int i = 0; i < LAT_NUM_PIXELS; i++){
-    strip.setPixelColor(i, 0, 0, 0);
-    strip.show();
+    pixels.setPixelColor(i, 0, 0, 0);
+    pixels.show();
   }
 
   // Start Strip LEDs and set them to be white to initalize
@@ -212,8 +212,8 @@ void updateVisibility() {
 void updateLatitude() {
   //reset all the LEDs so only one is showing at a time
   for (int i = 0; i < LAT_NUM_PIXELS; i++){
-    strip.setPixelColor(i, 0, 0, 0);
-    strip.show();
+    pixels.setPixelColor(i, 0, 0, 0);
+    pixels.show();
   }
   //use the map function to remap the latitude to a number between 0-7 
   //then light up that LED
