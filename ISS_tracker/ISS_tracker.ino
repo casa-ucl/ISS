@@ -64,7 +64,7 @@ void setup() {
   // start NeoPixel board LEDs and set them all to be red to initalize
   pixels.begin();
   for (int i = 0; i < LAT_NUM_PIXELS; i++){
-    pixels.setPixelColor(i, 0, 0, 0);
+    pixels.setPixelColor(i, 200, 0, 0);
     pixels.show();
   }
 
