@@ -31,18 +31,16 @@ First launched in 1998, The International Space Station (ISS) is the Earth’s b
 
 
 # component of the physical divice
-Servo motors
-LEDs
-Acrylic sheets
-Arduino NodeMCU
-360 Lego Geekservo
-Adafruit Neopixel Stick
-WS2812B LED Strip
-Globe map
+- Servo motors
+- LEDs
+- Acrylic sheets
+- Arduino NodeMCU
+- 360 Lego Geekservo
+- Adafruit Neopixel Stick
+- WS2812B LED Strip
+- Globe map
 
-Gauge Dial
-
-For the Arduino code:
+# For the Arduino code:
 - Remeber to change the WiFi credentials to the WiFi you want to connect to.
 - When it starts, expect the LED strip (visibility) to turn on white.
 - Expect all the LEDs on the NeoPixel board (latitude) to turn on red.
