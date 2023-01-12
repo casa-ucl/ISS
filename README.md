@@ -24,7 +24,7 @@ First launched in 1998, The International Space Station (ISS) is the Earth’s b
 # Workspace
 * 3D printer (Original Prusa i3 MK3S or MK3S+)
 * Fusion 360 for 3D modeling
-* Blender for animation [Blender for animation](https://www.youtube.com/watch?v=Yl_qDDRlXHo)
+* [Blender for animation](https://www.youtube.com/watch?v=Yl_qDDRlXHo)
 * Unity for AR development and Google Pixel 4a as the target platform
 * Servo motors, LEDs, and acrylic sheets to construct the physical device
 * Arduino IDE and C# for programming
