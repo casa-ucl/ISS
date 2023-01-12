@@ -2,7 +2,8 @@
 
 
 <img src ="physical device photos/FINAL RESULT GAUGE.jpeg">
-# ISS Tracker Overview
+
+# ISS-Tracker-Overview
 
 Welcome to our International Space Station (ISS) Tracking Device project! This project is a physical gauge that displays the position and visibility of the ISS in real-time using a combination of a rotating map, LED lights, and a servo motor. The device was developed by a team of students and is powered by an Arduino NodeMCU board.
 
@@ -33,7 +34,7 @@ First launched in 1998, The International Space Station (ISS) is the Earth’s b
 * Arduino IDE and C# for programming
 
 
-# component of the physical divice
+# physical divice component
 - Servo motors
 - LEDs
 - Acrylic sheets
